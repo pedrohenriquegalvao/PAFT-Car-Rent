@@ -1,0 +1,160 @@
+@use '../aux/aux' as aux;
+
+@include aux.resetDocument;
+
+
+nav {
+    display: flex;
+    align-items: center;
+    background-color: aux.$azulmarinho;
+    height: 140px;
+    padding: 0 180px 0 180px;
+    font-family: aux.$heebo;
+    font-weight: 300;
+    margin-bottom: 40px;
+    .logo {
+        margin-right: 55px;
+        cursor: pointer;
+    }
+    .options {
+        display: flex;
+        width: 87%;
+        align-items: center;
+        justify-content: space-between;
+        ul {
+            display: flex;
+            align-items: center;
+        }
+        li {
+            margin-right: 30px;
+            a {
+                color: #FFF;
+            }
+        }
+        li:last-child {
+            margin: 0;
+        }
+        
+        .nav-left {
+            
+        }
+        .nav-right {
+            
+            button {
+                background: none;
+                font-family: aux.$inter;
+                font-size: 1.1em;
+                font-weight: 600;
+                letter-spacing: 0.305em;
+                color: white;
+                padding: 12px 40px;
+                border: 0.1px solid #FFF;
+                border-radius: 5px;
+                margin-left: 20px;
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+            
+            .user-area {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-right: 30px;
+                li#user-pic{
+                    a {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+                }
+            }
+        }
+    
+        li {
+            color: #FFF;
+        }
+        img {
+            width: 75px;
+            border-radius: 50%;
+        }
+    }
+    .burguer {
+        display: none;
+    }
+    .close-sidebar{
+        display: none;
+    }
+}
+
+@media screen and(max-width:1265px) {
+    nav {
+        padding: 0 40px 0 40px;
+    }
+}
+
+@media screen and(max-width:980px) {
+    body {
+        overflow-x: hidden;
+        .burguer {
+            display: block !important;
+            color: #FFF;
+            font-size: 40px;
+            position: absolute;
+            right: 40px;
+            z-index: 2;
+        }
+        .options{
+            background-color: aux.$azulmarinho2;
+            position: absolute;
+            flex-direction: column;
+            justify-content: center !important;
+            top: 0;
+            height: 100%;
+            width: 45vw !important;
+            padding: 1em 1em;
+            right: -100vw;
+            animation-duration: 1s;
+            z-index: 1;
+            .nav-left, .nav-right {
+                flex-direction: column;
+            }
+            li {
+                margin-right: 0;
+                margin-bottom: 8vh;
+                button { 
+                    margin-left: 0 !important;
+                }
+            }
+            .nav-left{
+                margin-top: 5vh;
+                margin-bottom: 8vh;
+            }
+            .nav-right {
+                .user-area {
+                    flex-direction: row-reverse;
+                    margin: 0;
+                    margin-bottom: 20vh;
+                    li {
+                        margin: 0;
+                    }
+                    li#user-pic {
+                        margin-right: 1em;
+                    }
+                }
+                
+            }
+            
+        }
+    }
+
+    @keyframes showSidebar {
+        from {right: -100vw;}
+        to {right: 0;}
+    }
+    @keyframes hideSidebar {
+        from {right: 0;}
+        to {right: -100vw;}
+    }
+    
+}
