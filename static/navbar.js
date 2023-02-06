@@ -8,6 +8,7 @@ let navIcon = document.querySelector('.nav-icon');
 
 let mainContent = document.querySelector('#content');
 
+
 function toggleSidebar() {
     showSidebar = !showSidebar;
     if(showSidebar) {
@@ -37,6 +38,4 @@ window.addEventListener('resize', () => {
     }
 });
 
-navLogo.addEventListener('click', () => {
-    window.location.href = '/pages/homepage.html';
-});
+

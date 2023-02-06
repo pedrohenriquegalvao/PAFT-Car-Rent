@@ -16,7 +16,7 @@
     <nav id="navbar">
 
         <div class="logo">
-            <img src="static/img/logo-navbar.png" alt="">
+            <a href="index"><img src="static/img/logo-navbar.png" alt="" id="logo-navbar"></a>
         </div>
 
         <div class="options">
@@ -24,7 +24,7 @@
                 <li><a href="#">HOME</a></li>
                 <li><a href="#">SOBRE</a></li>
                 <li><a href="#">ALUGUEL</a></li>
-                <li><a href="car-rent">CADASTRE</a></li>
+                <li><a href="car-rent"><button id="btncadastre">CADASTRE</button></a></li>
             </ul>
         </div>
 
@@ -36,9 +36,13 @@
     
 
     <main id="content">
-        <h1>Alugue já!</h1>
-        <p>Aqui na Fusion Cars você cadastra seu veículo e tira dinheiro com isso! Adicione as informações necessárias e deixe o resto com a gente.</p>
-        <a href="car-rent"><button>Cadastrar veículo</button></a>
+        
+        <div id="info">
+            <h1>Alugue já!</h1>
+            <p>Aqui na Fusion Cars você cadastra seu veículo e tira dinheiro com isso! Adicione as informações necessárias e deixe o resto com a gente.</p>
+            <a href="car-rent"><button>Cadastrar veículo</button></a>
+        </div>
+        
     </main>
 
     <script src="static/navbar.js"></script>

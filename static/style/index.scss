@@ -1,3 +1,18 @@
-body {
+@use 'aux/aux' as aux;
+@include aux.resetDocument;
+
+
+main {
+    margin: 0 auto 50px auto;
+    padding: 0 180px;
     background-color: red;
+
+    #info {
+        background-color: blue;
+        background-image: url('/static/img/carro.jpeg');
+        background-position: center;
+        background-attachment: fixed;
+        background-size: cover;
+        height: 50vh;
+    }
 }

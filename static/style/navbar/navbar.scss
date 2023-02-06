@@ -6,7 +6,6 @@
 nav {
     display: flex;
     align-items: center;
-    background-color: aux.$azulmarinho;
     height: 140px;
     padding: 0 180px 0 180px;
     font-family: aux.$heebo;
@@ -28,51 +27,32 @@ nav {
         li {
             margin-right: 30px;
             a {
-                color: #FFF;
+                color: #000;
+                font-weight: 600;
+                font-size: 0.9em;
             }
         }
         li:last-child {
             margin: 0;
         }
-        
-        .nav-left {
-            
-        }
-        .nav-right {
-            
-            button {
-                background: none;
-                font-family: aux.$inter;
-                font-size: 1.1em;
-                font-weight: 600;
-                letter-spacing: 0.305em;
-                color: white;
-                padding: 12px 40px;
-                border: 0.1px solid #FFF;
-                border-radius: 5px;
-                margin-left: 20px;
-                &:hover {
-                    cursor: pointer;
-                }
-            }
-            
-            .user-area {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                margin-right: 30px;
-                li#user-pic{
-                    a {
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                    }
-                }
+         
+        #btncadastre {
+            background: none;
+            font-family: aux.$inter;
+            font-size: 1em;
+            font-weight: 600;
+            color: white;
+            padding: 8px 22px;
+            border: none;
+            margin-left: 20px;
+            background-color: rgb(182, 51, 51);
+            &:hover {
+                cursor: pointer;
             }
         }
-    
+            
         li {
-            color: #FFF;
+            color: #000;
         }
         img {
             width: 75px;
@@ -98,14 +78,14 @@ nav {
         overflow-x: hidden;
         .burguer {
             display: block !important;
-            color: #FFF;
+            color: rgb(182, 51, 51);
             font-size: 40px;
             position: absolute;
             right: 40px;
             z-index: 2;
         }
         .options{
-            background-color: aux.$azulmarinho2;
+            background-color: rgb(184, 107, 107);
             position: absolute;
             flex-direction: column;
             justify-content: center !important;
@@ -116,7 +96,7 @@ nav {
             right: -100vw;
             animation-duration: 1s;
             z-index: 1;
-            .nav-left, .nav-right {
+            ul {
                 flex-direction: column;
             }
             li {
@@ -125,24 +105,6 @@ nav {
                 button { 
                     margin-left: 0 !important;
                 }
-            }
-            .nav-left{
-                margin-top: 5vh;
-                margin-bottom: 8vh;
-            }
-            .nav-right {
-                .user-area {
-                    flex-direction: row-reverse;
-                    margin: 0;
-                    margin-bottom: 20vh;
-                    li {
-                        margin: 0;
-                    }
-                    li#user-pic {
-                        margin-right: 1em;
-                    }
-                }
-                
             }
             
         }

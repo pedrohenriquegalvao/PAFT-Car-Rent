@@ -12,7 +12,6 @@
 nav {
   display: flex;
   align-items: center;
-  background-color: #030225;
   height: 140px;
   padding: 0 180px 0 180px;
   font-family: "Heebo", sans-serif;
@@ -37,39 +36,29 @@ nav .options li {
   margin-right: 30px;
 }
 nav .options li a {
-  color: #FFF;
+  color: #000;
+  font-weight: 600;
+  font-size: 0.9em;
 }
 nav .options li:last-child {
   margin: 0;
 }
-nav .options .nav-right button {
+nav .options #btncadastre {
   background: none;
   font-family: "Inter", sans-serif;
-  font-size: 1.1em;
+  font-size: 1em;
   font-weight: 600;
-  letter-spacing: 0.305em;
   color: white;
-  padding: 12px 40px;
-  border: 0.1px solid #FFF;
-  border-radius: 5px;
+  padding: 8px 22px;
+  border: none;
   margin-left: 20px;
+  background-color: rgb(182, 51, 51);
 }
-nav .options .nav-right button:hover {
+nav .options #btncadastre:hover {
   cursor: pointer;
 }
-nav .options .nav-right .user-area {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-right: 30px;
-}
-nav .options .nav-right .user-area li#user-pic a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 nav .options li {
-  color: #FFF;
+  color: #000;
 }
 nav .options img {
   width: 75px;
@@ -93,14 +82,14 @@ nav .close-sidebar {
   }
   body .burguer {
     display: block !important;
-    color: #FFF;
+    color: rgb(182, 51, 51);
     font-size: 40px;
     position: absolute;
     right: 40px;
     z-index: 2;
   }
   body .options {
-    background-color: #05042b;
+    background-color: rgb(184, 107, 107);
     position: absolute;
     flex-direction: column;
     justify-content: center !important;
@@ -113,7 +102,7 @@ nav .close-sidebar {
             animation-duration: 1s;
     z-index: 1;
   }
-  body .options .nav-left, body .options .nav-right {
+  body .options ul {
     flex-direction: column;
   }
   body .options li {
@@ -122,21 +111,6 @@ nav .close-sidebar {
   }
   body .options li button {
     margin-left: 0 !important;
-  }
-  body .options .nav-left {
-    margin-top: 5vh;
-    margin-bottom: 8vh;
-  }
-  body .options .nav-right .user-area {
-    flex-direction: row-reverse;
-    margin: 0;
-    margin-bottom: 20vh;
-  }
-  body .options .nav-right .user-area li {
-    margin: 0;
-  }
-  body .options .nav-right .user-area li#user-pic {
-    margin-right: 1em;
   }
   @-webkit-keyframes showSidebar {
     from {

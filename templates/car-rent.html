@@ -11,46 +11,70 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
     
+    <link rel="stylesheet" href="static/style/navbar/navbar.css">
+    <link rel="stylesheet" href="static/style/car-rent.css">
 </head>
 <body>
+    <nav id="navbar">
 
-    <h1>Cadastro</h1>
-    <button>Adicionar</button>
-    <p class="sub-title">Adicione as informações e valores do seu veículo</p>
-    <section id="box-form">
-        <form id="formAdd">
-            <label for="marca">Insira a marca do veículo</label>
-            <input type="text" name="marca" id="marca" placeholder="Ex: Luiz Augusto">
-    
-            <label for="modelo">Insira o modelo do veículo</label>
-            <input type="text" name="modelo" id="modelo" placeholder="(99) 99999-9999">
-    
-            <label for="ano">Insira o ano do veículo</label>
-            <input type="text" name="ano" id="ano" placeholder="(99) 99999-9999">
-    
-            <label for="observacoes">Observações</label>
-            <textarea name="observacoes" id="observacoes" cols="30" rows="10"></textarea>
-    
-            <label for="diaria">Insira o valor da diária do seu veículo</label>
-            <input type="text" name="diaria" id="diaria" placeholder="(99) 99999-9999">
-    
-            <label for="status">Insira o status atual do veículo</label>
-            <select name="status" id="status">
-                <option id="default" value="disponivel">Disponível</option>
-                <option value="alugado">Alugado</option>
-                <option value="manutencao">Em manutenção</option>
-    
-            </select>
-    
-            <button class="form-submit">Cadastrar contato</button>
-        </form>
-    </section>
+        <div class="logo">
+            <a href="index"><img src="static/img/logo-navbar.png" alt="" id="logo-navbar"></a>
+        </div>
 
+        <div class="options">
+            <ul>
+                <li><a href="#">HOME</a></li>
+                <li><a href="#">SOBRE</a></li>
+                <li><a href="#">ALUGUEL</a></li>
+                <li><a href="car-rent"><button id="btncadastre">CADASTRE</button></a></li>
+            </ul>
+        </div>
+
+        <div class="burguer" onclick="toggleSidebar()">
+            <i class="fa-solid fa-bars nav-icon"></i>
+        </div>   
+    </nav>
+
+    <main>
+        <h1>Cadastro</h1>
+        <button>Adicionar</button>
+        <p class="sub-title">Adicione as informações e valores do seu veículo</p>
+        <section id="box-form">
+            <form id="formAdd">
+                <label for="marca">Insira a marca do veículo</label>
+                <input type="text" name="marca" id="marca" placeholder="Ex: Luiz Augusto">
+        
+                <label for="modelo">Insira o modelo do veículo</label>
+                <input type="text" name="modelo" id="modelo" placeholder="(99) 99999-9999">
+        
+                <label for="ano">Insira o ano do veículo</label>
+                <input type="text" name="ano" id="ano" placeholder="(99) 99999-9999">
+        
+                <label for="observacoes">Observações</label>
+                <textarea name="observacoes" id="observacoes" cols="30" rows="10"></textarea>
+        
+                <label for="diaria">Insira o valor da diária do seu veículo</label>
+                <input type="text" name="diaria" id="diaria" placeholder="(99) 99999-9999">
+        
+                <label for="status">Insira o status atual do veículo</label>
+                <select name="status" id="status">
+                    <option id="default" value="disponivel">Disponível</option>
+                    <option value="alugado">Alugado</option>
+                    <option value="manutencao">Em manutenção</option>
+        
+                </select>
+        
+                <button class="form-submit">Cadastrar contato</button>
+            </form>
+        </section>
     
-    <h2>Contatos</h2>
-    <div class="container">
-        <div id="cars"></div>
-    </div>
+        
+        <h2>Carros</h2>
+        <div class="container">
+            <div id="cars"></div>
+        </div>
+    </main>
+    
 
 
     <script src="{{url_for('static', filename='index.js')}}"></script>
