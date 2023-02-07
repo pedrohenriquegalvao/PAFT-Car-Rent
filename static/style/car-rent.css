@@ -1,5 +1,181 @@
+@import url("https://fonts.googleapis.com/css2?family=Heebo:wght@100;200;300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800&display=swap");
+/* ----- FONTES -----*/
+/* ----- CORES -----*/
+* {
+  padding: 0;
+  margin: 0;
+  text-decoration: none !important;
+  list-style: none !important;
+}
+
 main {
+  margin: 0 auto 15px auto;
+  padding: 0 180px;
+  font-family: "Inter", sans-serif;
+}
+main .content-title h1, main .content-title p {
+  text-align: center;
+}
+main #box-form form {
+  padding: 1em;
+  margin: auto;
+  width: 50%;
+  margin-top: 30px;
+  background-color: rgb(229, 229, 229);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+main #box-form form .form-content {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  padding: 0 4em;
+}
+main #box-form form .form-content .input-wrapper {
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+}
+main #box-form form .form-content .input-wrapper label {
+  margin-bottom: 0.5em;
+}
+main #box-form form .form-content .input-wrapper input {
+  outline: none;
+  border: none;
+  border-bottom: 1px solid rgb(182, 51, 51);
+  background: none;
+}
+main #box-form form .form-content .input-wrapper textarea {
+  border: 1px solid rgb(182, 51, 51);
+  outline: none;
+  width: 50%;
+  height: 80px;
+}
+main #box-form form .form-content .input-wrapper select {
+  width: 50%;
+  border: 1px solid rgb(182, 51, 51);
+  outline: none;
+}
+main #box-form form .form-content button {
+  background: none;
+  font-family: "Inter", sans-serif;
+  font-size: 1em;
+  font-weight: 600;
+  color: white;
+  padding: 8px 22px;
+  width: 200px;
+  border: none;
+  margin-top: 30px;
+  background-color: rgb(182, 51, 51);
+  align-self: center;
+}
+main #box-form form .form-content button:hover {
+  cursor: pointer;
+}
+
+#section-carros {
   margin: 0 auto 50px auto;
   padding: 0 180px;
-  background-color: red;
+  font-family: "Inter", sans-serif;
+}
+#section-carros h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+#section-carros .container-carros #cars {
+  display: flex;
+  flex-wrap: wrap;
+}
+#section-carros .container-carros #cars .card-carro {
+  transform: translateX(15px);
+  background-color: rgb(182, 51, 51);
+  color: #FFF;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  padding: 1em;
+  width: 310px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+}
+#section-carros .container-carros #cars .card-carro img {
+  width: 300px;
+  transform: translateX(8px);
+}
+#section-carros .container-carros #cars .card-carro p {
+  margin-bottom: 0.5em;
+}
+#section-carros .container-carros #cars .card-carro #card-buttons {
+  margin-top: 1em;
+}
+#section-carros .container-carros #cars .card-carro #card-buttons button {
+  width: 150px;
+  align-self: center;
+}
+#section-carros .container-carros #cars #warn {
+  margin: auto;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+#backgroundPopUp {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.561);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100vw;
+  height: 100vh;
+}
+#backgroundPopUp #popEdit {
+  font-family: "Inter", sans-serif;
+  background-color: #FFF;
+  position: fixed;
+  padding: 2em 4em;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 300px;
+}
+#backgroundPopUp #popEdit #formEdit {
+  display: flex;
+  flex-direction: column;
+}
+#backgroundPopUp #popEdit #formEdit p {
+  text-align: center;
+  margin-bottom: 1.5em;
+}
+#backgroundPopUp #popEdit #formEdit input, #backgroundPopUp #popEdit #formEdit textarea {
+  margin-bottom: 1em;
+}
+#backgroundPopUp #popEdit #formEdit input {
+  outline: none;
+  border: none;
+  border-bottom: 1px solid rgb(182, 51, 51);
+  background: none;
+}
+#backgroundPopUp #popEdit #formEdit textarea, #backgroundPopUp #popEdit #formEdit select {
+  border: 1px solid rgb(182, 51, 51);
+  outline: none;
+}
+#backgroundPopUp #popEdit #formEdit button {
+  background: none;
+  font-family: "Inter", sans-serif;
+  font-size: 1em;
+  font-weight: 600;
+  color: white;
+  padding: 8px 22px;
+  width: 200px;
+  border: none;
+  margin-top: 1.5em;
+  background-color: rgb(182, 51, 51);
+  align-self: center;
+}
+#backgroundPopUp #popEdit #formEdit button:hover {
+  cursor: pointer;
 }/*# sourceMappingURL=car-rent.css.map */

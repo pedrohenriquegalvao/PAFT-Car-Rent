@@ -10,7 +10,6 @@ nav {
     padding: 0 180px 0 180px;
     font-family: aux.$heebo;
     font-weight: 300;
-    margin-bottom: 40px;
     .logo {
         margin-right: 55px;
         cursor: pointer;
@@ -20,6 +19,7 @@ nav {
         width: 87%;
         align-items: center;
         justify-content: space-between;
+        margin-left: 30vw;
         ul {
             display: flex;
             align-items: center;

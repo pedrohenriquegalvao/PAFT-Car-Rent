@@ -16,7 +16,6 @@ nav {
   padding: 0 180px 0 180px;
   font-family: "Heebo", sans-serif;
   font-weight: 300;
-  margin-bottom: 40px;
 }
 nav .logo {
   margin-right: 55px;
@@ -27,6 +26,7 @@ nav .options {
   width: 87%;
   align-items: center;
   justify-content: space-between;
+  margin-left: 30vw;
 }
 nav .options ul {
   display: flex;

@@ -35,45 +35,63 @@
         </div>   
     </nav>
 
-    <main>
-        <h1>Cadastro</h1>
-        <button>Adicionar</button>
-        <p class="sub-title">Adicione as informações e valores do seu veículo</p>
+    <main id="content">
+
+        
+        <div class="content-title">
+            <h1>Cadastre seu veículo</h1>
+            <p class="sub-title">Adicione as informações e valores do seu veículo</p>
+        </div>
+        
+
         <section id="box-form">
+
             <form id="formAdd">
-                <label for="marca">Insira a marca do veículo</label>
-                <input type="text" name="marca" id="marca" placeholder="Ex: Luiz Augusto">
-        
-                <label for="modelo">Insira o modelo do veículo</label>
-                <input type="text" name="modelo" id="modelo" placeholder="(99) 99999-9999">
-        
-                <label for="ano">Insira o ano do veículo</label>
-                <input type="text" name="ano" id="ano" placeholder="(99) 99999-9999">
-        
-                <label for="observacoes">Observações</label>
-                <textarea name="observacoes" id="observacoes" cols="30" rows="10"></textarea>
-        
-                <label for="diaria">Insira o valor da diária do seu veículo</label>
-                <input type="text" name="diaria" id="diaria" placeholder="(99) 99999-9999">
-        
-                <label for="status">Insira o status atual do veículo</label>
-                <select name="status" id="status">
-                    <option id="default" value="disponivel">Disponível</option>
-                    <option value="alugado">Alugado</option>
-                    <option value="manutencao">Em manutenção</option>
-        
-                </select>
-        
-                <button class="form-submit">Cadastrar contato</button>
+
+                <div class="form-content">
+                    <div class="input-wrapper">
+                        <label for="marca">Insira a marca do veículo</label>
+                        <input type="text" name="marca" id="marca" placeholder="Ex: Fiat" pattern="\d{1,}">
+                    </div>
+                    <div class="input-wrapper">
+                        <label for="modelo">Insira o modelo do veículo</label>
+                        <input type="text" name="modelo" id="modelo" placeholder="Ex: Uno">
+                    </div>
+                    <div class="input-wrapper">
+                        <label for="ano">Insira o ano de fabricação</label>
+                        <input type="text" name="ano" id="ano" placeholder="Ex: 2018">
+                    </div>
+                    <div class="input-wrapper">
+                        <label for="observacoes">Observações</label>
+                        <textarea name="observacoes" id="observacoes" cols="30" rows="10"></textarea>
+                    </div>
+                    <div class="input-wrapper">
+                        <label for="diaria">Insira o valor da diária do seu veículo</label>
+                        <input type="text" name="diaria" id="diaria" placeholder="Ex: R$250,00">
+                    </div>
+                    <div class="input-wrapper">
+                        <label for="status">Insira o status atual do veículo</label>
+                        <select name="status" id="status">
+                            <option id="default" value="disponivel">Disponível</option>
+                            <option value="alugado">Alugado</option>
+                            <option value="manutencao">Em manutenção</option>
+                        </select>
+                    </div>
+                    <button class="form-submit">Cadastrar veículo</button>
+                </div>
             </form>
+
         </section>
     
-        
-        <h2>Carros</h2>
-        <div class="container">
+    </main>
+
+    <section id="section-carros">
+        <h1>Veículos cadastrados</h2>
+        <div class="container-carros">
             <div id="cars"></div>
         </div>
-    </main>
+    </section>
+    
     
 
 

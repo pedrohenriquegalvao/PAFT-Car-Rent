@@ -1,5 +1,195 @@
+@use 'aux/aux' as aux;
+@include aux.resetDocument;
+
 main {
+    margin: 0 auto 15px auto;
+    padding: 0 180px;
+    font-family: aux.$inter;
+    .content-title {
+        h1,p {
+            text-align: center;
+        }
+    }
+    #box-form{
+        form {
+            padding: 1em;
+            margin: auto;
+            width: 50%;
+            margin-top: 30px;
+            background-color: rgb(229, 229, 229);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            .form-content {
+                width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+                flex-direction: column;
+                padding: 0 4em;
+                .input-wrapper{
+                    margin-bottom: 10px;
+                    display: flex;
+                    flex-direction: column;
+                    label {
+                        margin-bottom: 0.5em;
+                    }
+                    input {
+                        outline: none;
+                        border: none;
+                        border-bottom: 1px solid rgb(182, 51, 51);
+                        background: none;
+                        
+                    }
+                    textarea{
+                        border: 1px solid rgb(182, 51, 51);
+                        outline: none;
+                        width: 50%;
+                        height: 80px;
+                    }
+                    select {
+                        width: 50%;
+                        border: 1px solid rgb(182, 51, 51);
+                        outline: none;
+                    }
+                    
+                }
+    
+                button {
+                    background: none;
+                    font-family: aux.$inter;
+                    font-size: 1em;
+                    font-weight: 600;
+                    color: white;
+                    padding: 8px 22px;
+                    width: 200px;
+                    border: none;
+                    margin-top: 30px;
+                    background-color: rgb(182, 51, 51);
+                    align-self: center;
+                    &:hover {
+                        cursor: pointer;
+                    }
+                }
+            }
+            
+            
+        }
+    }
+
+}
+
+#section-carros {
     margin: 0 auto 50px auto;
     padding: 0 180px;
-    background-color: red;
+    font-family: aux.$inter;
+    h1 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .container-carros {
+        #cars {
+            display: flex;
+            flex-wrap: wrap;
+            .card-carro {
+                transform: translateX(15px);
+                background-color:rgb(182, 51, 51);
+                color: #FFF;
+                margin-right: 10px;
+                margin-bottom: 10px;
+                padding: 1em;
+                width: 310px;
+                height: 400px;
+                display: flex;
+                flex-direction: column;
+                
+                img {
+                    width: 300px;
+                    transform: translateX(8px);
+                }
+                p {
+                    margin-bottom: 0.5em;
+                }
+
+                #card-buttons {
+                    margin-top: 1em;
+                    button {
+                        width: 150px;
+                        align-self: center;
+                        
+                    }
+                }
+                
+            }
+
+            #warn {
+                margin: auto;
+                width: fit-content;
+            }
+            
+        }
+        
+        
+    }
+
 }
+
+#backgroundPopUp {
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.561);
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    width: 100vw;
+    height: 100vh;
+    #popEdit {
+        font-family: aux.$inter;
+        background-color: #FFF;
+        position: fixed;
+        padding: 2em 4em;
+        top:50%;
+        left:50%;
+        transform:translate(-50%,-50%);
+        width: 300px;
+        height: 300px;
+        #formEdit {
+            display: flex;
+            flex-direction: column;
+            p {
+                text-align: center;
+                margin-bottom: 1.5em;
+            }
+            input,textarea {
+                margin-bottom: 1em;
+            }
+            
+            input {
+                outline: none;
+                border: none;
+                border-bottom: 1px solid rgb(182, 51, 51);
+                background: none;
+            }
+            textarea, select{
+                border: 1px solid rgb(182, 51, 51);
+                outline: none;
+            }
+            button {
+                background: none;
+                font-family: aux.$inter;
+                font-size: 1em;
+                font-weight: 600;
+                color: white;
+                padding: 8px 22px;
+                width: 200px;
+                border: none;
+                margin-top: 1.5em;
+                background-color: rgb(182, 51, 51);
+                align-self: center;
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+}
+

@@ -5,14 +5,15 @@ window.onload = getCars()
 
 document.getElementById('formAdd').onsubmit = (e) => {
 e.preventDefault()
-postContact()
+postCar()
 }
 
 // Função para remover o form de edição, caso ele exista, do dom.
 function removeEditFields() { 
     editMode = false // Desative o modo edição
-    let popEdit = document.getElementById('popEdit')
-    popEdit ? document.body.removeChild(popEdit) : null
+    let backgroundPopUp = document.getElementById('backgroundPopUp')
+    backgroundPopUp ? document.body.removeChild(backgroundPopUp) : null
+    document.body.style.overflowY = "auto"
 }
 
 // Requisição GET para recuperar todos os contatos
@@ -25,14 +26,29 @@ function getCars(){
     })
     .then(response => response.json())
     .then(json => {
-        console.log("json", json)
         document.getElementById('cars').innerHTML = ""
         if (json.cars) {
             json.cars.forEach(car => {
-                document.getElementById('cars').innerHTML += `<p>Modelo: ${car['modelo']}  Marca: ${car['marca']} Ano: ${car['ano']} Observações: ${car['observacoes']} Diaria: ${car['diaria']} Status: ${car['status']}  <button onclick='showUpdateFields(${car['id']})'>Editar </button><button onclick='deleteContact(${car['id']})'>Deletar </button></p>`
+                document.getElementById('cars').innerHTML += `
+                <div class='card-carro'>
+                    <img src="static/img/carro-card.png" alt="" id="carro-card">
+                    <p>Modelo: ${car['modelo']}</p>  
+                    <p>Marca: ${car['marca']}</p>
+                    <p>Ano: ${car['ano']}</p> 
+                    <p>Observações: ${car['observacoes']}</p> 
+                    <p>Diaria: ${car['diaria']}</p>
+                    <p>Status: ${car['status']}</p> 
+                    <div id="card-buttons">
+                        <button onclick='showUpdateFields(${car['id']})'>Editar</button>
+                        <button onclick='deleteCar(${car['id']})'>Deletar </button>
+                    </div>
+                </div>
+                
+                
+                `
             });
         } else {
-            document.getElementById('cars').innerHTML = "Não há nenhum carro na lista!"
+            document.getElementById('cars').innerHTML = "<p id='warn'>Não há veículos cadastrados.</p>"
         }
         
     })
@@ -41,7 +57,7 @@ function getCars(){
 }
 
 // Requisição POST para adicionar um contato na lista no servidor
-function postContact(){
+function postCar(){
     const modelo = document.getElementById('modelo');
     const marca = document.getElementById('marca');
     const ano = document.getElementById('ano');
@@ -58,12 +74,6 @@ function postContact(){
 
     const data = {"modelo":modelo.value,"marca":marca.value,"ano":ano.value,"observacoes":observacoes.value,"diaria":diaria.value,"status":estado}
 
-    console.log(data)
-    // Usando o framework axios
-    // axios.post(url,{'name':name.value,"phone":phone.value})
-    // .then(response => {
-    //     console.log(response)
-    // })
     fetch(url, {
         method: "POST",
         headers: {
@@ -73,7 +83,6 @@ function postContact(){
     })
     .then(response => response.json())
     .then(json => {
-        console.log("Contato adicionado: ", json)
         getCars()
     })
     .catch(error => console.error(error));
@@ -85,11 +94,16 @@ function postContact(){
     defaultOption.selected = true;
 }
 
+
+
 // Função chamada ao clicar no botão para editar um contato, cria e exibe os campos para editar o contato.
 function showUpdateFields(id){
     if(!editMode) { // Se ele não estiver em modo de edição
         editMode = true // Ative o modo edição
         
+        let backgroundPopUp = document.createElement('div')
+        backgroundPopUp.setAttribute('id', 'backgroundPopUp')
+
         let popEdit = document.createElement('div')
         popEdit.setAttribute('id', 'popEdit')
 
@@ -116,13 +130,13 @@ function showUpdateFields(id){
         inputDiaria.type = "text";
         inputDiaria.setAttribute('name', 'updateDiaria')
         inputDiaria.setAttribute('id', 'updateDiaria')
-        inputDiaria.setAttribute('placeholder', 'Insira o novo valor dz diária')
+        inputDiaria.setAttribute('placeholder', 'Insira o novo valor da diária')
 
         let inputAno = document.createElement('input')
         inputAno.type = "text";
         inputAno.setAttribute('name', 'updateAno')
         inputAno.setAttribute('id', 'updateAno')
-        inputAno.setAttribute('placeholder', 'Insira o novo ano')
+        inputAno.setAttribute('placeholder', 'Insira o novo ano de fabricação')
 
         let inputObs = document.createElement('textarea')
         inputObs.setAttribute('name', 'updateObs')
@@ -164,19 +178,21 @@ function showUpdateFields(id){
                     estado = option.innerText ;
                 }
             }
-            updateContact(id,inputMarca.value,inputModelo.value, inputAno.value, inputObs.value, inputDiaria.value, estado);
+            updateCar(id,inputMarca.value,inputModelo.value, inputAno.value, inputObs.value, inputDiaria.value, estado);
         }
 
         container.append(formEdit)
         popEdit.append(container)
+        backgroundPopUp.append(popEdit)
         
-        document.body.appendChild(popEdit); 
+        document.body.appendChild(backgroundPopUp); 
+        document.body.style.overflowY = "hidden"
     }
 }
 
 // Função chamada após clicar no botão "Confirmar" ao editar um contato.
 // Requisição PUT para atualizar o contato em questão (que está salvo na lista no servidor) com os campos alterados pelo usuário
-function updateContact(id, modelo, marca, ano, observacoes, diaria, estado) {
+function updateCar(id, modelo, marca, ano, observacoes, diaria, estado) {
     let urlUpdate = url + `/${parseInt(id)}`
     const data = {"modelo":modelo,"marca":marca,"ano":ano,"observacoes":observacoes,"diaria":diaria,"status":estado}
     fetch(urlUpdate, {
@@ -188,7 +204,6 @@ function updateContact(id, modelo, marca, ano, observacoes, diaria, estado) {
     })
     .then(response => response.json())
     .then(json => {
-        console.log("Contado editado: ", json)
         getCars()
     })
     .catch(error => console.error(error));
@@ -196,7 +211,7 @@ function updateContact(id, modelo, marca, ano, observacoes, diaria, estado) {
 }
 
 // DELETE para remover o carro da lista de carros presente no servidor.
-function deleteContact(id){
+function deleteCar(id){
     let urlDelete = url + `/${parseInt(id)}`
     fetch(urlDelete, {
         method: "DELETE",
@@ -206,7 +221,6 @@ function deleteContact(id){
     })
     .then(response => response.json())
     .then(json => {
-        console.log(json)
         getCars()
     })
     .catch(error => console.error(error));
